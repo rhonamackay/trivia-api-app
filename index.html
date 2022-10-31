@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css"></link>
+    <link rel="stylesheet"
+  href="https://fonts.googleapis.com/css?family=Neuton:bold700|Inconsolata">
+    <title>Quiz</title>
+</head>
+<body>
+<section class="layout">
+    <div class="header">
+        <h1>Test your knowledge</h1>
+        <label for="category">Difficulty: </label><select name="difficulty" id="difficulty" class="dropdown">
+            <option value="">Select</option>
+            <option value="easy">Easy</option>
+            <option value="medium">Medium</option>
+            <option value="hard">Hard</option></select>
+        <label for="difficulty">Category: </label><select name="category" id="category" class="dropdown">
+            <option value="9">General Knowledge</option>
+            <option value="27">Animals</option>
+            <option value="11">Film</option>
+            <option value="20">Mythology</option>
+            <option value="22">Geography</option>
+            <option value="23">History</option>
+            <option value="12">Music</option>
+        </select>
+    </div>
+    <div class="main">  
+            <form>
+                <h2 id="question">Trivia question</h2>
+                <input name="answer" type="radio" value="1" id="button-0" class="radio-button"><label id="label-0" for="button-0">answer</label><br>
+                <input name="answer" type="radio" value="2" id="button-1" class="radio-button"><label id="label-1" for="button-1">answer</label><br>
+                <input name="answer" type="radio" value="3" id="button-2" class="radio-button"><label id="label-2" for="button-2">answer</label><br>
+                <input name="answer" type="radio" value="4" id="button-3" class="radio-button"><label id="label-3" for="button-3">answer</label><br>
+                <br>
+                <button type="button" id="new-question">New question!</button>
+            </form>
+    </div>
+    <div class="footer">Made by Rhona MacKay</div>
+</section>
+<script src="main.js"></script>
+</body>
+</html>
