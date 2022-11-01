@@ -6,9 +6,11 @@ let url = 'https://opentdb.com/api.php?amount=1&type=multiple&difficulty=easy&ca
 
 //Selecting elements and adding event listeners
 document.querySelector("#new-question").addEventListener('click', fetchQuestion);
-const changeDif = document.querySelector('#difficulty')
-const changeCat = document.querySelector('#category')
+const changeDif = document.querySelector('#difficulty');
+const changeCat = document.querySelector('#category');
 const radiobuttons = document.querySelectorAll(".radio-button");
+const scoreElement = document.querySelector('#score');
+const resultElement = document.querySelector('#result')
 for (let i = 0; i < radiobuttons.length; i++) {
     radiobuttons[i].addEventListener('click', checkAnswer);
 }
@@ -26,6 +28,7 @@ function changeURL() {
 }
 
 async function fetchQuestion() {
+    resultElement.classList.remove("fade-in-out")
     let buttons = document.querySelectorAll(".radio-button")
         for (let i = 0; i < buttons.length; i++) {
             buttons[i].checked = false;
@@ -51,6 +54,7 @@ async function renderQuestion(data) {
     document.querySelector("#label-1").textContent = answers[1];
     document.querySelector("#label-2").textContent = answers[2];
     document.querySelector("#label-3").textContent = answers[3];
+    scoreElement.textContent = `Your score: ${score}`
 }
 
 fetchQuestion();
@@ -65,12 +69,17 @@ function checkAnswer(event) {
 
 function wellDone() {
     score++ ;
-    alert(`Well done, you chose the correct answer!\nYour score is ${score}`);
+    scoreElement.textContent = `Your score: ${score}`;
+    resultElement.textContent = 'Well done, correct answer!';
+    resultElement.classList.toggle("fade-in-out");
 }
 
 function tooBad() {
     score-- ;
-    alert(`Too bad, better luck next time\nYour score is ${score}`);
+    scoreElement.textContent = `Your score: ${score}`;
+    resultElement.textContent = 'Wrong answer, too bad :(';
+    resultElement.classList.toggle("fade-in-out");
+
 }
 
 //HTML entities decoder

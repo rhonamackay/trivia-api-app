@@ -1,14 +1,27 @@
+:root {
+  --main-bg-colour: #CE4257;
+  --main-text-colour:#4F000B;
+  --emphasis-colour: #FF7F51;
+  --dark-bg-colour: #720026;
+  --light-text-colour:#FF9B54;
+
+}
+
 * {
   padding: 0;
   margin: 0;
   font-family: Neuton;
 }
 
+h1 {
+  font-size: 3rem;
+}
+
 body {
   height: 100vh;
   width: 100vw;
-  background: #CE4257;
-  color: #4F000B;
+  background: var(--main-bg-colour);
+  color: var(--main-text-colour);
 }
 
 .header { 
@@ -16,20 +29,29 @@ body {
 }
 
 #container {
-  background-color: #FF7F51;
+  background-color: var(--emphasis-colour);
   border-radius: 50px;
   padding: 10px 50px;
-  stroke: #4F000B;
+  stroke: var(--main-text-colour);
   max-height: 20%;
 }
 
 .main {
-  background-color: #FF7F51;
+  background-color: var(--emphasis-colour);
   height: 50%;
   border-radius: 50px;
-  padding: 2%;
+  padding: 0 4% 0 4%;
   display: flex;
   align-items: center;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.score {
+  display: flex;
+  justify-content: space-between;
+  width: 80%;
+  height: 10%;
 }
 
 form {
@@ -37,6 +59,7 @@ form {
   max-width: 800px;
   min-width: 300px;
   margin: 0 auto;
+  min-height: 60%;
 }
 
 #new-question {
@@ -46,9 +69,13 @@ form {
   height: 2em;
   min-width: 300px;
   font-size: 1.1rem;
-  background: rgba(252, 70, 107, 1) 100%;
-  border: 3px, solid, #4F000B;
+  background: var(--main-bg-colour);
+  border: 3px, solid, var(--main-text-colour);
   border-radius: 10px;
+}
+
+#result {
+  opacity: 0;
 }
 
 label {
@@ -58,8 +85,8 @@ label {
 
 select {
   font-family: Inconsolata;
-  background: #FF7F51;
-  border:#720026;
+  background: var(--emphasis-colour);
+  border:var(--dark-bg-colour);
 }
 
 .layout {
@@ -73,12 +100,23 @@ select {
 }
 
 .footer {
-  background-color: #720026;
+  background-color: var(--dark-bg-colour);
   width: 100vw;
   height: 10%;
-  color: #FF9B54;
+  color: var(--light-text-colour);
   display: flex;
   align-items: center;
   justify-content: space-around;
   font-family: Inconsolata;
 }
+
+@keyframes fade-in-out {
+  0% {opacity: 0.0;}
+  50% {opacity: 1.0;}
+  100% {opacity: 0.0;}
+}
+.fade-in-out {
+  animation-name: fade-in-out;
+  animation-duration: 2s;
+}
+

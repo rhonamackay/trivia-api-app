@@ -1,0 +1,1 @@
+A simple trivia game using fetch API
