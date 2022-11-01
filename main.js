@@ -2,24 +2,27 @@ let question;
 let correctAnswer;
 let wrongAnswers;
 let score = 0;
-let url = 'https://opentdb.com/api.php?amount=1&category=9&type=multiple'
+let url = 'https://opentdb.com/api.php?amount=1&type=multiple&difficulty=easy&category=27'
 
 //Selecting elements and adding event listeners
 document.querySelector("#new-question").addEventListener('click', fetchQuestion);
+const changeDif = document.querySelector('#difficulty')
+const changeCat = document.querySelector('#category')
 const radiobuttons = document.querySelectorAll(".radio-button");
-for (i = 0; i < radiobuttons.length; i++) {
+for (let i = 0; i < radiobuttons.length; i++) {
     radiobuttons[i].addEventListener('click', checkAnswer);
 }
-document.querySelector('#difficulty').addEventListener('change', changeDiff);
-document.querySelector('#category').addEventListener('change', changeCat);
-
-function changeCat(event) {
-    url = url.slice(0,46) + event.target.value + url.slice(47,62)
-    console.log(url)
+const dropdowns = document.querySelectorAll('.dropdown')
+for (let i=0; i < dropdowns.length; i++) {
+    dropdowns[i].addEventListener('change', changeURL);
 }
 
-function changeDiff(event) {
-    url = url + `&difficulty=${event.target.value}`
+function changeURL() {
+    let newURL = ['https://opentdb.com/api.php?amount=1&type=multiple&','difficulty=easy','&category=27']
+    newURL[1] = `difficulty=${changeDif.value}`
+    newURL[2] = `&category=${changeCat.value}`
+    url = newURL.toString().replaceAll(',', '') 
+    fetchQuestion()
 }
 
 async function fetchQuestion() {

@@ -13,12 +13,14 @@
 <section class="layout">
     <div class="header">
         <h1>Test your knowledge</h1>
-        <label for="category">Difficulty: </label><select name="difficulty" id="difficulty" class="dropdown">
-            <option value="">Select</option>
+        <div id="dif-dd">
+            <label for="category">Difficulty: </label><select name="difficulty" id="difficulty" class="dropdown">
             <option value="easy">Easy</option>
             <option value="medium">Medium</option>
             <option value="hard">Hard</option></select>
-        <label for="difficulty">Category: </label><select name="category" id="category" class="dropdown">
+        </div>
+        <div id="cat-dd">
+            <label for="difficulty">Category: </label><select name="category" id="category" class="dropdown">
             <option value="9">General Knowledge</option>
             <option value="27">Animals</option>
             <option value="11">Film</option>
@@ -26,7 +28,8 @@
             <option value="22">Geography</option>
             <option value="23">History</option>
             <option value="12">Music</option>
-        </select>
+            </select>
+        </div>
     </div>
     <div class="main">  
             <form>
