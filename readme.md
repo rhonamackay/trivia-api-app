@@ -1,12 +1,12 @@
 A simple trivia game using fetch API, Javascript, HTML and CSS
 
-# Expansion ideas
+## Expansion ideas
 - implementing leaderboard using a database
 - auhtentication/authorisation so users can log in to save their scores
 
 
 ## Done 💯
-# Version 2.0
+### Version 2.0
 ✅ Fix bug where clicking repeatedly on the same answer will keep on increasing/decreasing score
     DONE: Now answer is checked when 'Check answer' button is clicked. A new question is generated only when the selected answer is correct
 ✅ Make design more accessible: back-up fonts, larger text size
