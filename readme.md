@@ -1,6 +1,6 @@
-A simple trivia game using fetch API, Javascript, HTML and CSS
+A simple trivia game accessible on mobile and desktop. Made using Javascript, HTML and CSS, with questions from Open Trivia Database. 
 
-## Expansion ideas
+## Possible expansion ideas for version 3.0
 - implementing leaderboard using a database
 - auhtentication/authorisation so users can log in to save their scores
 
