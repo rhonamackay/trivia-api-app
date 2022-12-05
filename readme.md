@@ -1,3 +1,6 @@
+# Test your knowledge!
+Give it a go [here](https://rhonamackay.github.io/trivia-api-app/) 💡🤔
+
 A simple trivia game accessible on mobile and desktop. Made using Javascript, HTML and CSS, with questions from Open Trivia Database. 
 
 ## Possible expansion ideas for version 3.0
